@@ -5,6 +5,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const gamesPlayedCounter = document.getElementById('gamesPlayed');
     const timerDisplay = document.getElementById('timer');
     const restartButton = document.getElementById('restart');
+    const textTimer = document.querySelector('.text');
     let moves = 0;
     let gamesPlayed = parseInt(localStorage.getItem('gamesPlayed'), 10) || 0;
     let lockBoard = false;
@@ -47,7 +48,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function flipCard() {
-        if (lockBoard || this.classList.contains('flipped')) return;
+        if (lockBoard || this.classList.contains('flipped') || (firstCard && secondCard)) return; //alleen twee kaarten kunne omdraaien
 
         if (!firstCard) {
             firstCard = this;
@@ -75,6 +76,8 @@ document.addEventListener('DOMContentLoaded', () => {
         moves++;
         movesCounter.innerText = moves;
         failsCounter.innerText = moves; // Elke move resulteert in een 'fail'
+        failsCounter.style.color = "red";
+        failsCounter.style.fontSize = "20px";
     }
 
     function resetBoard() {
@@ -91,6 +94,13 @@ document.addEventListener('DOMContentLoaded', () => {
             let mins = Math.floor(seconds / 60);
             let secs = seconds % 60;
             timerDisplay.innerText = `${mins}:${secs.toString().padStart(2, '0')}`;
+
+            if (seconds <= 10) { //veranderen van kleur
+                timerDisplay.style.color = 'red';
+            } else {
+                timerDisplay.style.color = '#06226e'; 
+                textTimer.style.display = "none";
+            }
         }, 1000);
     }
 
@@ -107,5 +117,10 @@ document.addEventListener('DOMContentLoaded', () => {
     restartButton.addEventListener('click', startGame);
 
     gamesPlayedCounter.innerText = gamesPlayed;
+
+    window.addEventListener('beforeunload', () => {
+        localStorage.removeItem('gamesPlayed');
+    });
+
     startGame(); // Start het spel wanneer de pagina wordt geladen
 });

@@ -8,11 +8,20 @@
 <body>
     <div class="game-info">
         <h1>Endless Memory Game</h1>
-        <p>Moves: <span id="moves">0</span></p>
-        <p>Fails: <span id="fails">0</span></p>
-        <p>Games Played: <span id="gamesPlayed">0</span></p>
-        <p>Time: <span id="timer">0:00</span></p>
-        <button id="restart">Restart Game</button>
+        <p class="text">You got 10 seconds to memorize!</p>
+        <div class="timmy">
+            <p class="time">Time: <span id="timer">0:00</span></p>
+        </div>
+        <div class="extra">
+            <p>Moves: <span id="moves">0</span></p>
+            <p>Fails: <span id="fails">0</span></p>
+            <p>Games Played: <span id="gamesPlayed">0</span></p>
+        </div>
+        
+        <div>
+            <button id="restart">Restart Game</button>
+        </div>
+        
     </div>
     <div class="memory-game">
         <!-- Kaarten worden hier toegevoegd door JavaScript -->

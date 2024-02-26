@@ -1,5 +1,6 @@
-.body {
-    font-family: Arial, Helvetica, sans-serif;
+body {
+    font-family: Impact, 'Arial Narrow Bold', sans-serif;
+    background-color: #eadff0;
 }
 
 .game-info {
@@ -9,8 +10,12 @@
 
 .game-info h1 {
     margin: 0;
+    margin-bottom: 20px;
     padding: 10px;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family:Impact, 'Arial Narrow Bold', sans-serif;
+    font-size: 50px;
+    color: #b3454e;
+    
 }
 
 .game-info p, .game-info button {
@@ -22,23 +27,29 @@
 
 #restart {
     cursor: pointer;
+    border-radius: 20px;
+    margin: 20px;
+    padding: 15px;
+    color: aliceblue;
+    background-color: #b3454e;
+    border: none;
 }
 
 .memory-game {
     display: grid;
-    grid-template-columns: repeat(6, 1fr);
+    grid-template-columns: repeat(4, 0.01fr);
     gap: 20px;
-    width: 700px;
+    width: 490px;
     margin: auto;
-    margin-top: 40px
+    margin-top: 20px
 }
 
 .card {
     width: 105px;
     height: 150px;
     position: relative;
-    border: 1px solid lightblue;
-    border-radius: 2em;
+    border: 1px solid black;
+    border-radius: 1.9em;
 }
 
 .card:hover {
@@ -70,4 +81,51 @@
 
 .card.flipped .back-face {
     transform: rotateY(180deg);
+}
+
+.time{
+    font-size: 30px;
+    color: #06226e;
+    
+}
+
+.timmy{
+    margin-bottom: 30px;
+}
+
+.extra{
+    color: #06226e;
+}
+
+.text{
+    font-family:Impact, 'Arial Narrow Bold', sans-serif;
+    font-size: 20px; 
+    color: #06226e;
+   
+}
+
+@media(min-width: 800px){
+
+    .memory-game {
+        display: grid;
+        grid-template-columns: repeat(6, 1fr);
+        gap: 20px;
+        width: 750px;
+        margin: auto;
+        margin-top: 20px
+    }
+
+}
+
+@media(min-width: 1200px){
+
+    .memory-game {
+        display: grid;
+        grid-template-columns: repeat(6, 1fr);
+        gap: 40px;
+        width: 890px;
+        margin: auto;
+        margin-top: 20px
+    }
+
 }
