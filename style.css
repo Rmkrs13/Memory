@@ -4,7 +4,7 @@
 
 .game-info {
     text-align: center;
-    margin-bottom: 20px;
+    margin-bottom: 0px;
 }
 
 .game-info h1 {
@@ -27,21 +27,22 @@
 .memory-game {
     display: grid;
     grid-template-columns: repeat(6, 1fr);
-    gap: 10px;
-    width: 600px;
+    gap: 20px;
+    width: 700px;
     margin: auto;
+    margin-top: 40px
 }
 
 .card {
-    width: 100px;
-    height: 100px;
+    width: 105px;
+    height: 150px;
     position: relative;
-    border: 1px solid black;
-    border-radius: 1em;
+    border: 1px solid lightblue;
+    border-radius: 2em;
 }
 
 .card:hover {
-    opacity: 50%;
+    opacity: 80%;
 }
 
 .card img {
