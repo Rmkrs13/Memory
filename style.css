@@ -30,9 +30,16 @@ body {
     border-radius: 20px;
     margin: 20px;
     padding: 15px;
-    color: aliceblue;
+    color: #fff;
     background-color: #b3454e;
-    border: none;
+    border: 2px solid #b3454e;
+}
+
+#restart:hover {
+    color: #b3454e;
+    background-color: #fff;
+    border: 2px solid #b3454e;
+
 }
 
 .memory-game {
@@ -48,12 +55,13 @@ body {
     width: 105px;
     height: 150px;
     position: relative;
-    border: 1px solid black;
+    border: 2px solid #000;
     border-radius: 1.9em;
 }
 
 .card:hover {
     opacity: 80%;
+    border: 2px solid #b3454e;
 }
 
 .card img {

@@ -44,7 +44,7 @@ document.addEventListener('DOMContentLoaded', () => {
         document.querySelectorAll('.card').forEach(card => card.classList.add('flipped'));
         setTimeout(() => {
             document.querySelectorAll('.card').forEach(card => card.classList.remove('flipped'));
-        }, 10000);
+        }, 5000);
     }
 
     function flipCard() {
